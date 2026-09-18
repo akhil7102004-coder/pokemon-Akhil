@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Scout | Pokémon Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/"><span class="brand-mark">●</span> TYPE SCOUT</a>
+        <a class="nav-link" href="/predict">Open predictor <span aria-hidden="true">→</span></a>
+    </nav>
+    <main class="page-shell hero">
+        <section>
+            <p class="eyebrow">Pokémon analytics / 001</p>
+            <h1>Find the type hiding in the <span>stats.</span></h1>
+            <p class="lede">Type Scout reads a Pokémon's battle profile and estimates its primary type using a trained machine-learning model.</p>
+            <a class="button" href="/predict">Start a prediction <span aria-hidden="true">↗</span></a>
+        </section>
+        <aside class="signal-card" aria-label="Model input preview">
+            <div class="pokeball" aria-hidden="true"></div>
+            <p class="card-label">MODEL INPUTS</p>
+            <h2 class="card-title">Six signals. One type.</h2>
+            <div class="mini-stats">
+                <div class="mini-stat"><strong>HP</strong><span>vitality</span></div>
+                <div class="mini-stat"><strong>ATK</strong><span>power</span></div>
+                <div class="mini-stat"><strong>DEF</strong><span>resistance</span></div>
+                <div class="mini-stat"><strong>HT</strong><span>height</span></div>
+                <div class="mini-stat"><strong>WT</strong><span>weight</span></div>
+                <div class="mini-stat"><strong>XP</strong><span>experience</span></div>
+            </div>
+        </aside>
+    </main>
+</body>
+</html>

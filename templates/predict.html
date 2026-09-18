@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict | Type Scout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/"><span class="brand-mark">●</span> TYPE SCOUT</a>
+        <a class="nav-link" href="/">← Home</a>
+    </nav>
+    <main class="page-shell form-layout">
+        <section class="form-intro">
+            <p class="eyebrow">Profile reader / 002</p>
+            <h1>Build your Pokémon profile.</h1>
+            <p class="lede">Enter the base stats below. The model will compare the profile with the training data and return the most likely primary type.</p>
+        </section>
+        <section class="form-card">
+            <h2>Base statistics</h2>
+            <p class="form-note">Use the values from the Pokédex. Decimals are accepted for height and weight.</p>
+            <form method="POST" action="/predict">
+                <div class="form-grid">
+                    <div class="field"><label for="hp">HP</label><input id="hp" type="number" name="hp" min="0" required><small>Health points</small></div>
+                    <div class="field"><label for="attack">Attack</label><input id="attack" type="number" name="attack" min="0" required><small>Physical power</small></div>
+                    <div class="field"><label for="defense">Defense</label><input id="defense" type="number" name="defense" min="0" required><small>Physical resistance</small></div>
+                    <div class="field"><label for="height_dm">Height</label><input id="height_dm" type="number" name="height_dm" min="0" step="0.1" required><small>Decimetres (dm)</small></div>
+                    <div class="field"><label for="weight_hg">Weight</label><input id="weight_hg" type="number" name="weight_hg" min="0" step="0.1" required><small>Hectograms (hg)</small></div>
+                    <div class="field"><label for="base_experience">Base experience</label><input id="base_experience" type="number" name="base_experience" min="0" required><small>Growth value</small></div>
+                </div>
+                <button class="button" type="submit">Reveal primary type <span aria-hidden="true">↗</span></button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
