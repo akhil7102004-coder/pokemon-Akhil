@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result | Type Scout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/"><span class="brand-mark">●</span> TYPE SCOUT</a>
+        <a class="nav-link" href="/predict">New scan <span aria-hidden="true">↗</span></a>
+    </nav>
+    <main class="page-shell">
+        <section class="result-card">
+            <p class="eyebrow">Scan complete / 003</p>
+            <h1>Primary type identified</h1>
+            <div class="result-type">{{ prediction }}</div>
+            <p class="result-caption">Based on the six statistics you entered.</p>
+            <div class="stat-grid">
+                <div class="stat-item"><strong>{{ data.hp }}</strong><span>HP</span></div>
+                <div class="stat-item"><strong>{{ data.attack }}</strong><span>Attack</span></div>
+                <div class="stat-item"><strong>{{ data.defense }}</strong><span>Defense</span></div>
+                <div class="stat-item"><strong>{{ data.height_dm }}</strong><span>Height dm</span></div>
+                <div class="stat-item"><strong>{{ data.weight_hg }}</strong><span>Weight hg</span></div>
+                <div class="stat-item"><strong>{{ data.base_experience }}</strong><span>Base XP</span></div>
+            </div>
+            <div class="result-actions">
+                <a class="button" href="/predict">Scan another profile <span aria-hidden="true">↗</span></a>
+                <a class="button secondary" href="/">Back home</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
